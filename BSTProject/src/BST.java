@@ -20,9 +20,9 @@ Private void printPreHelper(TN parent)
   {
     if(subroot != null)
     {
+      system.out.println(parent.getValue());
       printPreHelper(parent.getLeft())
-      system.out.println(parent.getValue());
-      printPreHelper(parent.getRight()
+      printPreHelper(parent.getRight())
     }
   }
 public void printInOrder()
@@ -45,23 +45,23 @@ Private void printInHelper(TN parent)
     }
   }
 
-public void printInOrder()
+public void printPostOrder()
   {
     if(root != null)
     {
-      printInHelper(root.getLeft())
+      printPostHelper(root.getLeft())
+      printPostHelper(root.getRight())
       system.out.println(root.getValue());
-      printInHelper(root.getRight())
     }
   }
 
-Private void printInHelper(TN parent)
+Private void printPostHelper(TN parent)
   {
     if(subroot != null)
     {
-      printInHelper(parent.getLeft())
+      printPostHelper(parent.getLeft())
+      printPostHelper(parent.getRight()
       system.out.println(parent.getValue());
-      printInHelper(parent.getRight()
     }
   }
 }
