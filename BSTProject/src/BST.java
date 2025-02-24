@@ -11,16 +11,20 @@ public void add(newVal)
 {
   	if(root != null)
 	  {
-		if(newVal.Comparable(root.getValue()))
-		printInAdder(root.getLeft())
-		Else object is more than root
-		printInAdder(root.getRight())		
-    } 
+		  if(newVal.Comparable(root.getValue() <= 0))
+      {
+        printInAdder(root.getLeft())
+      }
+		  Else
+        {
+		    printInAdder(root.getRight())		
+        }
+    }
 	
-	Private void printInAdder(TN subroot)
+	Private void printInAdder(TreeNode subroot)
 	if (subroot! = null)
 	{
-		if object is less than the child
+		if(newVal.Comparable.(subroot.getValue() <=0))
 		{
 			PrintInHelper(subroot.getLeft())
 		}
@@ -32,13 +36,13 @@ public void add(newVal)
   }
   Else
   {
-  If object is less than child
+  if(newVal.Comparable(subroot.getValue() <= 0))
   {
-  TN(Object.getValue, Tn left, null)
+  TreeNode(Object.getValue, TreeNode left, null)
   }
   Else
   {
-  TN(Object.getValue, null, Tn right)
+  TreeNode(Object.getValue, null, TreeNode right)
   }
   }
 

@@ -9,6 +9,8 @@
 
  public class BSTTester {
    public static void main(String[] args) {
-   
-	
+    Tree = new BST()
+    
+    System.out.println("DOG");
+  
  }
