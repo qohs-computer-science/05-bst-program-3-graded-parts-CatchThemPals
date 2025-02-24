@@ -2,10 +2,48 @@ import java.lang.Comparable;
 
 public class BST implements BSTInterface
 {
-public BST()
+  public BST()
   {
-    TreeNode(null)
+    TreeNode = null
   }
+  
+public void add(newVal)
+{
+  	if(root != null)
+	  {
+		if(newVal.Comparable(root.getValue()))
+		printInAdder(root.getLeft())
+		Else object is more than root
+		printInAdder(root.getRight())		
+    } 
+	
+	Private void printInAdder(TN subroot)
+	if (subroot! = null)
+	{
+		if object is less than the child
+		{
+			PrintInHelper(subroot.getLeft())
+		}
+		Else
+		{
+			PrintInHelper(subroot.getRight())
+		}
+		
+  }
+  Else
+  {
+  If object is less than child
+  {
+  TN(Object.getValue, Tn left, null)
+  }
+  Else
+  {
+  TN(Object.getValue, null, Tn right)
+  }
+  }
+
+}
+
   public void printPreOrder()
   {
     if(root != null)
@@ -16,13 +54,13 @@ public BST()
     }
   }
 
-Private void printPreHelper(TN parent)
+Private void printPreHelper(TreeNode subroot)
   {
     if(subroot != null)
     {
-      system.out.println(parent.getValue());
-      printPreHelper(parent.getLeft())
-      printPreHelper(parent.getRight())
+      system.out.println(subroot.getValue());
+      printPreHelper(subroot.getLeft())
+      printPreHelper(subroot.getRight())
     }
   }
 public void printInOrder()
@@ -35,13 +73,13 @@ public void printInOrder()
     }
   }
 
-Private void printInHelper(TN parent)
+Private void printInHelper(TreeNode subroot))
   {
     if(subroot != null)
     {
-      printInHelper(parent.getLeft())
-      system.out.println(parent.getValue());
-      printInHelper(parent.getRight()
+      printInHelper(subroot.getLeft())
+      system.out.println(subroot.getValue());
+      printInHelper(subroot.getRight()
     }
   }
 
@@ -55,13 +93,13 @@ public void printPostOrder()
     }
   }
 
-Private void printPostHelper(TN parent)
+Private void printPostHelper(TN subroot)
   {
     if(subroot != null)
     {
-      printPostHelper(parent.getLeft())
-      printPostHelper(parent.getRight()
-      system.out.println(parent.getValue());
+      printPostHelper(subroot.getLeft())
+      printPostHelper(subroot.getRight()
+      system.out.println(subroot.getValue());
     }
   }
 }
