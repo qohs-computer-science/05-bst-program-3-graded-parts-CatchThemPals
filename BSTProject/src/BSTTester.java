@@ -12,5 +12,17 @@
     Tree = new BST();
     
     CodeTree = new("Q", null, null)
+    CodeTree.add("R");
+    CodeTree.add("C");
+    CodeTree.add("H");
+    CodeTree.add("A");
+    CodeTree.add("R");
+    CodeTree.add("D");
+    CodeTree.add("Q");
+    CodeTree.add("U");
+    CodeTree.add("I");
+    CodeTree.add("N");
+    CodeTree.add("C");
+    CodeTree.add("E");
   
  }
