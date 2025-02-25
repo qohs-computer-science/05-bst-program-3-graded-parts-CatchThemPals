@@ -2,48 +2,71 @@ import java.lang.Comparable;
 
 public class BST implements BSTInterface
 {
+
+  private TreeNode root;
   public BST()
   {
     root = null;
   }
+  public int size()
+  {
+    return 0;
+  }
+  public boolean isEmpty()
+  {
+  return false;  
+  }
+  public boolean find(Comparable toFind)
+  {
+    return false;
+  }
+  public boolean replace(Comparable old, Comparable toAdd)
+  {
+    return false;
+  }
+  public boolean delete(Comparable old)
+  {
+    return false;
+  }
+
   
-  public void add(Object newVal)
+  public void add(Comparable newVal)
   {
   	if(root != null)
 	  {
-		  if(newVal.Comparable(root.getValue() <= 0))
+		  if(newVal.compareTo(root.getValue()) <= 0)
       {
-        printInAdder(root.getLeft());
+        addHelper(newVal, root.getLeft());
       }
 		  else
         {
-		    printInAdder(root.getRight());
+		    addHelper(newVal, root.getRight());
         }
     }
   }
-	private void printInAdder(Object newVal,TreeNode subroot){
+	private void addHelper(Comparable newVal,TreeNode subroot){
 	if (subroot != null)
 	{
-		if(newVal.CompareTo(subroot.getValue()) <= 0)
+		if(newVal.compareTo(subroot.getValue()) <= 0)
 		{
-			PrintInHelper(subroot.getLeft());
+			addHelper(newVal, subroot.getLeft());
 		}
 		else
 		{
-			PrintInHelper(subroot.getRight());
+			addHelper(newVal, subroot.getRight());
 		}
 		
   }
   else
   {
-  if(newVal.CompareTo(subroot.getValue()) <= 0)
+  if(newVal.compareTo(subroot.getValue()) <= 0)
   {
   subroot.setLeft(new TreeNode(newVal,null,null));
-  )
+  
   }
   else
   {
-  TreeNode(newVal.getValue(), null, TreeNode );
+  subroot.setLeft(new TreeNode(newVal,null,null));
   }
   }
 }
@@ -97,7 +120,7 @@ public void printPostOrder()
     }
   }
 
-private void printPostHelper(TN subroot)
+private void printPostHelper(TreeNode subroot)
   {
     if(subroot != null)
     {

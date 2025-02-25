@@ -9,21 +9,22 @@
 
  public class BSTTester {
    public static void main(String[] args) {
-    Tree = new BST();
+    BST Tree = new BST();
     
-    CodeTree = new TreeNode("Q", null, null);
-    CodeTree.add("R");
-    CodeTree.add("C");
-    CodeTree.add("H");
-    CodeTree.add("A");
-    CodeTree.add("R");
-    CodeTree.add("D");
-    CodeTree.add("Q");
-    CodeTree.add("U");
-    CodeTree.add("I");
-    CodeTree.add("N");
-    CodeTree.add("C");
-    CodeTree.add("E");
+    Tree.add("O");
+    Tree.add("R");
+    Tree.add("C");
+    Tree.add("H");
+    Tree.add("A");
+    Tree.add("R");
+    Tree.add("D");
+    Tree.add("Q");
+    Tree.add("U");
+    Tree.add("I");
+    Tree.add("N");
+    Tree.add("C");
+    Tree.add("E");
   
+    
  }
  }
