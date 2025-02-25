@@ -4,7 +4,7 @@ public class BST implements BSTInterface
 {
   public BST()
   {
-    root = null
+    root = null;
   }
   
   public void add(newVal)
