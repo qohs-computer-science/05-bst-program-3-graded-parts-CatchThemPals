@@ -21,7 +21,7 @@ public class BST implements BSTInterface
         }
     }
   }
-	private void printInAdder(TreeNode subroot){
+	private void printInAdder(Object newVal,TreeNode subroot){
 	if (subroot != null)
 	{
 		if(newVal.CompareTo(subroot.getValue() <=0))
@@ -38,11 +38,11 @@ public class BST implements BSTInterface
   {
   if(newVal.CompareTo(subroot.getValue() <= 0))
   {
-  TreeNode(Object.getValue(), TreeNode left, null);
+  TreeNode(newVal.getValue(), TreeNode left, null);
   }
   else
   {
-  TreeNode(Object.getValue(), null, TreeNode right);
+  TreeNode(newVal.getValue(), null, TreeNode right);
   }
   }
 }
