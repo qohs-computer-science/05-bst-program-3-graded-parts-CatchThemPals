@@ -13,11 +13,11 @@ public void add(newVal)
 	  {
 		  if(newVal.Comparable(root.getValue() <= 0))
       {
-        printInAdder(root.getLeft())
+        printInAdder(root.getLeft());
       }
 		  Else
         {
-		    printInAdder(root.getRight())		
+		    printInAdder(root.getRight());
         }
     }
 	
@@ -26,11 +26,11 @@ public void add(newVal)
 	{
 		if(newVal.Comparable.(subroot.getValue() <=0))
 		{
-			PrintInHelper(subroot.getLeft())
+			PrintInHelper(subroot.getLeft());
 		}
 		Else
 		{
-			PrintInHelper(subroot.getRight())
+			PrintInHelper(subroot.getRight());
 		}
 		
   }
@@ -38,11 +38,11 @@ public void add(newVal)
   {
   if(newVal.Comparable(subroot.getValue() <= 0))
   {
-  TreeNode(Object.getValue, TreeNode left, null)
+  TreeNode(Object.getValue, TreeNode left, null);
   }
   Else
   {
-  TreeNode(Object.getValue, null, TreeNode right)
+  TreeNode(Object.getValue, null, TreeNode right);
   }
   }
 
@@ -53,8 +53,8 @@ public void add(newVal)
     if(root != null)
     {
       system.out.println(root.getValue());
-      printPreHelper(root.getLeft())
-      printPreHelper(root.getRight())
+      printPreHelper(root.getLeft());
+      printPreHelper(root.getRight());
     }
   }
 
@@ -63,17 +63,17 @@ Private void printPreHelper(TreeNode subroot)
     if(subroot != null)
     {
       system.out.println(subroot.getValue());
-      printPreHelper(subroot.getLeft())
-      printPreHelper(subroot.getRight())
+      printPreHelper(subroot.getLeft());
+      printPreHelper(subroot.getRight());
     }
   }
 public void printInOrder()
   {
     if(root != null)
     {
-      printInHelper(root.getLeft())
+      printInHelper(root.getLeft());
       system.out.println(root.getValue());
-      printInHelper(root.getRight())
+      printInHelper(root.getRight());
     }
   }
 
@@ -81,9 +81,9 @@ Private void printInHelper(TreeNode subroot))
   {
     if(subroot != null)
     {
-      printInHelper(subroot.getLeft())
+      printInHelper(subroot.getLeft());
       system.out.println(subroot.getValue());
-      printInHelper(subroot.getRight()
+      printInHelper(subroot.getRight();
     }
   }
 
@@ -91,8 +91,8 @@ public void printPostOrder()
   {
     if(root != null)
     {
-      printPostHelper(root.getLeft())
-      printPostHelper(root.getRight())
+      printPostHelper(root.getLeft());
+      printPostHelper(root.getRight());
       system.out.println(root.getValue());
     }
   }
@@ -101,8 +101,8 @@ Private void printPostHelper(TN subroot)
   {
     if(subroot != null)
     {
-      printPostHelper(subroot.getLeft())
-      printPostHelper(subroot.getRight()
+      printPostHelper(subroot.getLeft());
+      printPostHelper(subroot.getRight();
       system.out.println(subroot.getValue());
     }
   }

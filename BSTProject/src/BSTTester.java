@@ -1,8 +1,8 @@
 /*
- * TODO: Name
- * TODO: Date
- * TODO: Class Period
- * TODO: Program Description
+ * TODO: Sebastian Xu
+ * TODO: 2/24/2025
+ * TODO: 6
+ * TODO: Makes a tree
  */
 
  import java.lang.Comparable;
