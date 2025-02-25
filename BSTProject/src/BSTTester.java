@@ -11,7 +11,7 @@
    public static void main(String[] args) {
     Tree = new BST();
     
-    CodeTree = new("Q", null, null);
+    CodeTree = new TreeNode("Q", null, null);
     CodeTree.add("R");
     CodeTree.add("C");
     CodeTree.add("H");
@@ -25,4 +25,5 @@
     CodeTree.add("C");
     CodeTree.add("E");
   
+ }
  }
