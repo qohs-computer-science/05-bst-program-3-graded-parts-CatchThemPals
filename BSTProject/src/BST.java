@@ -24,7 +24,7 @@ public class BST implements BSTInterface
 	private void printInAdder(TreeNode subroot){
 	if (subroot != null)
 	{
-		if(newVal.Comparable.(subroot.getValue() <=0))
+		if(newVal.CompareTo(subroot.getValue() <=0))
 		{
 			PrintInHelper(subroot.getLeft());
 		}
