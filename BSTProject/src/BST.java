@@ -43,41 +43,43 @@ public class BST implements BSTInterface
 	  {
 		  if(newVal.compareTo(root.getValue()) <= 0)
       {
-        addHelper(newVal, root.getLeft());
+        addHelper(newVal, root.getLeft(),root);
       }
 		  else
         {
-		    addHelper(newVal, root.getRight());
+		    addHelper(newVal, root.getRight(),root);
         }
     }
     else
     {
-      new TreeNode(newVal,null,null);
+      
+      root = new TreeNode(newVal,null,null);
+      
     }
   }
-	private void addHelper(Comparable newVal,TreeNode subroot){
+	private void addHelper(Comparable newVal,TreeNode subroot,TreeNode parent){
 	if (subroot != null)
 	{
 		if(newVal.compareTo(subroot.getValue()) <= 0)
 		{
-			addHelper(newVal, subroot.getLeft());
+			addHelper(newVal, subroot.getLeft(),subroot);
 		}
 		else
 		{
-			addHelper(newVal, subroot.getRight());
+			addHelper(newVal, subroot.getRight(),subroot);
 		}
 		
   }
   else
   {
-  if(newVal.compareTo(subroot.getValue()) <= 0)
+  if(newVal.compareTo(parent.getValue()) <= 0)
   {
-  subroot.setLeft(new TreeNode(newVal,null,null));
+  parent.setLeft(new TreeNode(newVal,null,null));
   
   }
   else
   {
-  subroot.setLeft(new TreeNode(newVal,null,null));
+  parent.setRight(new TreeNode(newVal,null,null));
   }
   }
 }
