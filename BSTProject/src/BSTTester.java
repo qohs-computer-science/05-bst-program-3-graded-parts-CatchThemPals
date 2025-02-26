@@ -29,6 +29,7 @@
     Tree.printPostOrder();
     Tree.printInOrder();
     Tree.printPreOrder();
+    Tree.isEmpty();
     
  }
  }
