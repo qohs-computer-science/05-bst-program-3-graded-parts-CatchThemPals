@@ -26,7 +26,7 @@
     Tree.add("C");
     Tree.add("E");
   
-    Tree.printInOrder();
+    Tree.printPostOrder();
     
  }
  }
