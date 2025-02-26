@@ -52,7 +52,7 @@ public class BST implements BSTInterface
     }
     else
     {
-      new TreeNode(newVal);
+      new TreeNode(newVal,null,null);
     }
   }
 	private void addHelper(Comparable newVal,TreeNode subroot){
