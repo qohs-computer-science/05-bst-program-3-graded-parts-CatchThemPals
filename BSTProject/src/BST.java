@@ -14,7 +14,14 @@ public class BST implements BSTInterface
   }
   public boolean isEmpty()
   {
-  return false;  
+    if(root != null)
+    {
+      return false;
+    }
+    else
+    {
+      return true;
+    }  
   }
   public boolean find(Comparable toFind)
   {
@@ -42,6 +49,10 @@ public class BST implements BSTInterface
         {
 		    addHelper(newVal, root.getRight());
         }
+    }
+    else
+    {
+      new TreeNode(newVal);
     }
   }
 	private void addHelper(Comparable newVal,TreeNode subroot){

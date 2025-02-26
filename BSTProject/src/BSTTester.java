@@ -11,6 +11,7 @@
    public static void main(String[] args) {
     BST Tree = new BST();
     
+    
     Tree.add("O");
     Tree.add("R");
     Tree.add("C");
@@ -25,6 +26,9 @@
     Tree.add("C");
     Tree.add("E");
   
+    Tree.printPreOrder();
+    Tree.printPostOrder();
+    Tree.printInOrder();
     
  }
  }
