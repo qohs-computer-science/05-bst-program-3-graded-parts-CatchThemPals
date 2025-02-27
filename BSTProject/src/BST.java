@@ -33,8 +33,67 @@ public class BST implements BSTInterface
   }
   public boolean delete(Comparable old)
   {
-    return false;
+    	if(root != null)
+	{
+	if(old.compareTo(root.getValue() == 0)
+	// delete this one - 4 cases - left only, right only, 2 kids, no kids
+		else if (old.compareTo(root.getValue() < 0)
+	deleteHelper(old, root, root.getLeft())
+	 //          (value, parent, child)
+		Else
+	deleteHelper(old, root, root.right())
+	 //          (value, parent, child)
+	}
+
   }
+Private boolean deleteHelper(Object old, TN parent, TN child)
+ // determine if child is the thing to delete
+	if(child != null)
+	{
+	if(old.compareTo(child.getValue() == 0)
+	// delete this one - 8 cases
+Child is a LC of parent  - left only, right only, 2 kids, no kids
+	// check no kids would be 
+if(child.getLeft() == null && child.getRight() == null)
+	// parent.setLeft(null);
+	//parent.setLeft(child.getLeft());
+	//parent.setLeft(child.getRight());
+	//parent.setLeft
+Child is a RC of parent - left only, right only, 2 kids, no kids
+	// check no kids would be 
+if(child.getLeft() == null && child.getRight() == null)
+	// parent.setRight(null);
+	// parent.setRight(child.getLeft());
+	// parent.setRight(child.getRight());
+	
+		Else if object is < root
+deleteHelper(old, root, root.getLeft())
+	 //          (value, parent, child)
+		Else
+deleteHelper(old, root, root.right())
+	 //          (value, parent, child)
+	}
+	Else 
+		Return false; // not in the tree to delete
+	if subroot =  value
+{	
+	if(subroot.getLeft(subroot) != null & subroot.getRight(subroot) != null)
+	{
+	parent.setLeft(subroot.getleft(subroot))
+	
+	}
+	Else if(subroot.getLeft
+}
+Else if subroot value is less than or equal to object
+{
+	printInAdder(subroot.getLeft())
+}
+Else if subroot value is greater than object
+{
+	printInAdder(subroot.getRight())
+	Else
+	Return false
+
 
   
   public void add(Comparable newVal)
