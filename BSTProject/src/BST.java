@@ -44,7 +44,10 @@ public class BST implements BSTInterface
 	deleteHelper(old, root, root.right())
 	 //          (value, parent, child)
 	}
-
+  else
+  {
+    return false;
+  }
   }
 Private boolean deleteHelper(Object old, TN parent, TN child)
  // determine if child is the thing to delete
