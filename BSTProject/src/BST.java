@@ -35,12 +35,51 @@ public class BST implements BSTInterface
   {
     	if(root != null)
 	{
-	if(old.compareTo(root.getValue() == 0)
+	if(old.compareTo(root.getValue()) == 0)
+  {
+    // 4 cases:
+    // root no kids
+    if(root.getLeft() == null) // Checks for left is null, then see if right is null, then if first is false and second is true, then make root right, else make root null and return true
+    { 
+      if(root.getRight() == null)
+      {
+        root = null;
+        return true;
+      }
+      else
+      {
+        root = root.getRight();
+        return true;
+      } 
+    }
+    else if(root.getRight() == null)// Checks for right is null, then see if left is null, then if first is false and second is true, then make root left, else make root null and return true
+    { 
+    {
+      if(root.getLeft() == null)
+      {
+        root = null;
+        return true;
+      }
+      else
+      {
+        root = root.getLeft();
+        return true;
+      }  
+    }
+    else
+    {
+      root.set 
+    }
+
+    // root left kid only - root = left
+    // root right kid only = root = right
+    // root both kids -- replaced with left kid, and the right kid becomes the right-most kid of the new root -- while loop
+  }
 	// delete this one - 4 cases - left only, right only, 2 kids, no kids
 		else if (old.compareTo(root.getValue() < 0)
 	deleteHelper(old, root, root.getLeft())
 	 //          (value, parent, child)
-		Else
+	else
 	deleteHelper(old, root, root.right())
 	 //          (value, parent, child)
 	}
@@ -49,11 +88,41 @@ public class BST implements BSTInterface
     return false;
   }
   }
-Private boolean deleteHelper(Object old, TN parent, TN child)
+private boolean deleteHelper(Object old, TN parent, TN child)
  // determine if child is the thing to delete
 	if(child != null)
 	{
-	if(old.compareTo(child.getValue() == 0)
+	if(old.compareTo(child.getValue) == 0)
+  {
+    if(child.getRight() == null)
+    {
+      if(child.getLeft() == null)
+      {
+        child = null;
+        return true;
+      }
+      else
+      {
+       child = child.getLeft();
+      }
+    }
+    else if(child.getLeft() == null)
+    {
+      if(child.getRight() == null)
+      {
+        child = null;
+        return true;
+      }
+      else
+      {
+
+      }
+    }
+    else
+    {
+      
+    }
+  }
 	// delete this one - 8 cases
 Child is a LC of parent  - left only, right only, 2 kids, no kids
 	// check no kids would be 
@@ -69,14 +138,14 @@ if(child.getLeft() == null && child.getRight() == null)
 	// parent.setRight(child.getLeft());
 	// parent.setRight(child.getRight());
 	
-		Else if object is < root
+	else if object is < root
 deleteHelper(old, root, root.getLeft())
 	 //          (value, parent, child)
 		Else
 deleteHelper(old, root, root.right())
 	 //          (value, parent, child)
 	}
-	Else 
+	else 
 		Return false; // not in the tree to delete
 	if subroot =  value
 {	
