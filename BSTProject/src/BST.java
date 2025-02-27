@@ -116,20 +116,19 @@ Else if subroot value is greater than object
       
     }
   }
-	private void addHelper(Comparable newVal,TreeNode subroot,TreeNode parent){
-	if (subroot != null)
+private void addHelper(Comparable newVal,TreeNode subroot,TreeNode parent){
+if (subroot != null){
+	if(newVal.compareTo(subroot.getValue()) <= 0)
 	{
-		if(newVal.compareTo(subroot.getValue()) <= 0)
-		{
-			addHelper(newVal, subroot.getLeft(),subroot);
-		}
-		else
-		{
-			addHelper(newVal, subroot.getRight(),subroot);
-		}
+	addHelper(newVal, subroot.getLeft(),subroot);
+	}
+	else
+	{
+	addHelper(newVal, subroot.getRight(),subroot);
+	}
 		
   }
-  else
+else
   {
   if(newVal.compareTo(parent.getValue()) <= 0)
   {
@@ -144,7 +143,7 @@ Else if subroot value is greater than object
 }
 
   public void printPreOrder()
-  {
+  { // Prints it in preOrder root,left,right
     if(root != null)
     {
       System.out.println(root.getValue());
@@ -163,7 +162,7 @@ private void printPreHelper(TreeNode subroot)
     }
   }
 public void printInOrder()
-  {
+  { // print in Inorder left,root,right
     if(root != null)
     {
       printInHelper(root.getLeft());
@@ -173,7 +172,7 @@ public void printInOrder()
   }
 
 private void printInHelper(TreeNode subroot)
-  {
+  { 
     if(subroot != null)
     {
       printInHelper(subroot.getLeft());
@@ -183,7 +182,7 @@ private void printInHelper(TreeNode subroot)
   }
 
 public void printPostOrder()
-  {
+  { // Print in Post order left,right,root
     if(root != null)
     {
       printPostHelper(root.getLeft());
