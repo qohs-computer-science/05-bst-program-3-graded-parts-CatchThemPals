@@ -63,6 +63,7 @@ public class BST implements BSTInterface
       }
       else // two kids
       {
+        
         root = root.getLeft();
         return true;
       }  
