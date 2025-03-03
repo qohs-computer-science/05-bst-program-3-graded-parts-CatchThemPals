@@ -12,7 +12,7 @@ public class BST implements BSTInterface
   }
   public int size()
   {
-    return 0;
+    
   }
   public boolean isEmpty()
   {
@@ -27,7 +27,27 @@ public class BST implements BSTInterface
   }
   public boolean find(Comparable toFind)
   {
-    return false;
+    if(root != null)
+    { if(toFind.compareTo(root.getValue()) == 0)
+      {
+        return true;
+      }
+      findHelper(root.getLeft());
+      findHelper(root.getRight());
+      
+    }
+    else
+    {
+      return false;
+    }
+  }
+  private boolean findHelper(TreeNode subroot)
+  {
+    if(subroot != null)
+    {
+      printInHelper(subroot.getLeft());
+      printInHelper(subroot.getRight());
+    }
   }
   public boolean replace(Comparable old, Comparable toAdd)
   {
@@ -36,109 +56,119 @@ public class BST implements BSTInterface
   public boolean delete(Comparable old)
   {
       if(root != null)
-  {
-  if(old.compareTo(root.getValue()) == 0)
-  {
-    // 4 cases:
-    // root no kids
-    if(root.getLeft() == null)
-    {
-      if(root.getRight() == null) // no kids
       {
-        root = null;
-        return true;
-      }
-      else // right kid only
-      {
-        root = root.getRight();
-        return true;
-      }
-    }
-    else if(root.getLeft() != null)
-    {
-      if(root.getRight() == null) // left kid only
-      {
-        root = root.getLeft();
-        return true;
-      }
-      else // two kids
-      {
-        temp TreeNode = root.getLeft();
-        while(temp.getRight != null)
+        if(old.compareTo(root.getValue()) == 0)
         {
-          temp = temp.getRight();
+          // 4 cases:
+          // root no kids
+          if(root.getLeft() == null)
+          {
+            if(root.getRight() == null) // no kids
+            {
+              root = null;
+              return true;
+            }
+            else // right kid only
+            {
+              root = root.getRight();
+              return true;
+            }
+          }
+          else if(root.getLeft() != null)
+          {
+            if(root.getRight() == null) // left kid only
+            {
+              root = root.getLeft();
+              return true;
+            }
+            else // two kids
+            {
+              TreeNode temp =  root.getLeft();
+              while(temp.getRight() != null)
+              {
+                temp = temp.getRight();
+              }
+              temp.setRight(root.getRight());
+              root = temp;
+              return true;
+            }  
+          }
         }
-        temp.setRight(root.getRight())
-        root = temp;
-        return true;
-      }  
-    }
-  }
-  // delete this one - 4 cases - left only, right only, 2 kids, no kids
-  else if (old.compareTo(root.getValue() < 0){
-  deleteHelper(old, root, root.getLeft())}
-   //          (value, parent, child)
-  else{
-  deleteHelper(old, root, root.getright())
-   //          (value, parent, child)
-  }
-  else
-  {
-    return false;
-  }
-  }
-private boolean deleteHelper(Object old, TN parent, TN child){
- // determine if child is the thing to delete
-  if(child != null)
-  {
-  if(old.compareTo(child.getValue) == 0)
-  {
-    if(child.getRight() == null)
+      // delete this one - 4 cases - left only, right only, 2 kids, no kids
+      else if (old.compareTo(root.getValue()) < 0){
+        return deleteHelper(old, root, root.getLeft());}
+      //          value, parent, child
+      else{
+        return deleteHelper(old, root, root.getRight());
+      //          (value, parent, child)
+      }
+    } // end of root != null
+    else
+      {
+        return false;
+      }
+  } // end of  delete
+private boolean deleteHelper(Comparable old, TreeNode parent, TreeNode child)
+{
+  // determine if child is the thing to delete
+    if(child != null)
     {
-      if(child.getLeft() == null) // no kid
+      if(old.compareTo(child.getValue()) == 0)
       {
-        child = null;
-        return true;
-      }
-      else // left kid
-      {
-       child = child.getLeft();
-      }
-    }
-    else if(child.getRight != null)
-    {
-      if(child.getLeft() == null)
-      {
-        child = child.getRight();
-        return true;
-      }
-      else
-      {
-        temp TreeNode = child.getLeft(); // pput the right child on the bottom of the left child
-        while(temp.getRight != null)
+        if(child.getRight() == null)
         {
-          temp = temp.getRight();
+          if(child.getLeft() == null) // no kid
+          {
+            if (parent.getLeft() == child)
+              parent.setLeft(null);
+            else
+              parent.setRight(null);
+            return true;
+          }
+          else // left kid
+          {
+            if (parent.getLeft() == child)
+              parent.setLeft(child.getLeft());
+            else
+              parent.setRight(child.getLeft());
+            return true;
+          }
         }
-        temp.setRight(child.getRight())
-        child = temp;
+        else 
+        {
+          if(child.getRight() != null && child.getLeft() == null) // only right kid 
+            {
+              if (parent.getLeft() == child)
+                parent.setLeft(child.getRight());
+              else
+                parent.setRight(child.getRight());
+              return true;
+            }
+          else // two kids
+            {
+              TreeNode temp= child.getLeft(); // pput the right child on the bottom of the left child
+              while(temp.getRight() != null)
+              {
+                temp = temp.getRight();
+              }
+              temp.setRight(child.getRight());
+              child = temp;
+              return true;
+            }
+           }
+        }
       }
+      else if (old.compareTo(child.getValue()) < 0){
+        return deleteHelper(old, parent, child.getLeft());
+      }//          (value, parent, child)
+      else{
+        return deleteHelper(old, parent, child.getRight());
+      } // end else
+    } // end child != null
+    else{
+      return false;
     }
-  }
-    else if (old.compareTo(child.getValue() < 0){
-  deleteHelper(old, parent, child.getLeft())
-    }//          (value, parent, child)
-  else{
-  deleteHelper(old, parent, child.getright())
-    }
-}
-else{
-  return false;
-}
-}
-
-
-
-
+  } // end of deleteHelper
  
   public void add(Comparable newVal)
   {
