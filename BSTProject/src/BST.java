@@ -75,10 +75,10 @@ public class BST implements BSTInterface
     }
   }
   // delete this one - 4 cases - left only, right only, 2 kids, no kids
-  else if (old.compareTo(root.getValue() < 0)
-  deleteHelper(old, root, root.getLeft())
+  else if (old.compareTo(root.getValue() < 0){
+  deleteHelper(old, root, root.getLeft())}
    //          (value, parent, child)
-  else
+  else{
   deleteHelper(old, root, root.getright())
    //          (value, parent, child)
   }
@@ -87,7 +87,7 @@ public class BST implements BSTInterface
     return false;
   }
   }
-private boolean deleteHelper(Object old, TN parent, TN child)
+private boolean deleteHelper(Object old, TN parent, TN child){
  // determine if child is the thing to delete
   if(child != null)
   {
@@ -114,7 +114,7 @@ private boolean deleteHelper(Object old, TN parent, TN child)
       }
       else
       {
-        temp TreeNode = child.getLeft();
+        temp TreeNode = child.getLeft(); // pput the right child on the bottom of the left child
         while(temp.getRight != null)
         {
           temp = temp.getRight();
@@ -124,7 +124,15 @@ private boolean deleteHelper(Object old, TN parent, TN child)
       }
     }
   }
- 
+    else if (old.compareTo(child.getValue() < 0){
+  deleteHelper(old, parent, child.getLeft())
+    }//          (value, parent, child)
+  else{
+  deleteHelper(old, parent, child.getright())
+    }
+}
+  return false;
+}
 
 
 
