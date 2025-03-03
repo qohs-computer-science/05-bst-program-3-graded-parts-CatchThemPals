@@ -131,7 +131,9 @@ private boolean deleteHelper(Object old, TN parent, TN child){
   deleteHelper(old, parent, child.getright())
     }
 }
+else{
   return false;
+}
 }
 
 
