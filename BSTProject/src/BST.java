@@ -15,24 +15,19 @@ public class BST implements BSTInterface
     int dog = 0;
     if(root != null)
     {
-      findSize(root.getLeft(), dog);
-      findSize(root.getRight(), dog);
+      return 1 + findSize(root.getLeft() + findSize(root.getRight());
     } // End of root != null
 
-    return dog;
+    return 0;
   } // End of int size
 
-  private int findSize(TreeNode subroot,int dog)
+  private int findSize(TreeNode subroot)
   {
     if(subroot != null)
     {
-      findSize(subroot.getLeft(),dog);
-      dog += 1;
-      findSize(subroot.getRight(),dog);
-      return dog;
+    return findSize(subroot.getLeft()) + findSize(subroot.getRight());
     } // End of root != null
-    return dog;
-    
+    return 0;
   }
   public boolean isEmpty()
   {
