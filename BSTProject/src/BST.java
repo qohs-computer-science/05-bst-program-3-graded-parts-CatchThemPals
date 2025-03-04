@@ -12,7 +12,27 @@ public class BST implements BSTInterface
   }
   public int size()
   {
-    
+    int treeSize;
+    if(root != null)
+    {
+      return findSize(root.getLeft());
+      return findSize(root.getRight());
+    } // End of root != null
+
+    return treeSize;
+  } // End of int size
+
+  public int findSize()
+  {
+    if(root != null)
+    {
+      return findSize(root.getLeft());
+      return findSize(root.getRight());
+    } // End of root != null
+    else
+    {
+      return 0;
+    }
   }
   public boolean isEmpty()
   {
