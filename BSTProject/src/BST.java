@@ -41,12 +41,15 @@ public class BST implements BSTInterface
       return false;
     }
   }
-  private boolean findHelper(TreeNode subroot)
+  private boolean findHelper(TreeNode subroot,Comparable toFind)
   {
     if(subroot != null)
-    {
-      printInHelper(subroot.getLeft());
-      printInHelper(subroot.getRight());
+    { if(subroot == )
+      {
+
+      }
+      findHelper(subroot.getLeft());
+      findHelper(subroot.getRight());
     }
     else
     {
