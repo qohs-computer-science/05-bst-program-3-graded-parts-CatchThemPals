@@ -48,6 +48,10 @@ public class BST implements BSTInterface
       printInHelper(subroot.getLeft());
       printInHelper(subroot.getRight());
     }
+    else
+    {
+      return false;
+    }
   }
   public boolean replace(Comparable old, Comparable toAdd)
   {
@@ -74,7 +78,7 @@ public class BST implements BSTInterface
               return true;
             }
           }
-          else if(root.getLeft() != null)
+          else
           {
             if(root.getRight() == null) // left kid only
             {
@@ -95,10 +99,13 @@ public class BST implements BSTInterface
           }
         }
       // delete this one - 4 cases - left only, right only, 2 kids, no kids
-      else if (old.compareTo(root.getValue()) < 0){
-        return deleteHelper(old, root, root.getLeft());}
+      else if (old.compareTo(root.getValue()) < 0)
+      {
+        return deleteHelper(old, root, root.getLeft());
+      }
       //          value, parent, child
-      else{
+      else
+      {
         return deleteHelper(old, root, root.getRight());
       //          (value, parent, child)
       }
@@ -128,10 +135,15 @@ private boolean deleteHelper(Comparable old, TreeNode parent, TreeNode child)
           else // left kid
           {
             if (parent.getLeft() == child)
+            {
               parent.setLeft(child.getLeft());
+              return true;
+            }
             else
+            {
               parent.setRight(child.getLeft());
-            return true;
+              return true;
+            }
           }
         }
         else 
@@ -139,10 +151,15 @@ private boolean deleteHelper(Comparable old, TreeNode parent, TreeNode child)
           if(child.getRight() != null && child.getLeft() == null) // only right kid 
             {
               if (parent.getLeft() == child)
+              {
                 parent.setLeft(child.getRight());
+                return true;
+              }
               else
+              {
                 parent.setRight(child.getRight());
               return true;
+              }
             }
           else // two kids
             {
@@ -155,20 +172,20 @@ private boolean deleteHelper(Comparable old, TreeNode parent, TreeNode child)
               child = temp;
               return true;
             }
-           }
+          }
         }
+        else if (old.compareTo(child.getValue()) < 0){
+          return deleteHelper(old, parent, child.getLeft());
+        }//          (value, parent, child)
+        else{
+          return deleteHelper(old, parent, child.getRight());
+        } // end else
       }
-      else if (old.compareTo(child.getValue()) < 0){
-        return deleteHelper(old, parent, child.getLeft());
-      }//          (value, parent, child)
-      else{
-        return deleteHelper(old, parent, child.getRight());
-      } // end else
-    } // end child != null
-    else{
-      return false;
-    }
-  } // end of deleteHelper
+      else
+      {
+        return false;
+      }
+    } // end of deleteHelper
  
   public void add(Comparable newVal)
   {
