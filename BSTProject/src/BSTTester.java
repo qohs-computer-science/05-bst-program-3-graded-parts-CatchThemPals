@@ -11,7 +11,7 @@
    public static void main(String[] args) {
     BST Tree = new BST();
     
-    
+    System.out.println(Tree.isEmpty());
     Tree.add("O");
     Tree.add("R");
     Tree.add("C");
@@ -25,11 +25,13 @@
     Tree.add("N");
     Tree.add("C");
     Tree.add("E");
-  
-    Tree.printPostOrder();
+    System.out.println(Tree.isEmpty());
     Tree.printInOrder();
-    Tree.printPreOrder();
-    Tree.delete("J");
-    
+    System.out.println("Inorder after deleting D");
+    Tree.delete("D");
+    Tree.printInOrder();
+    System.out.println(Tree.find("Q"));
+    System.out.println(Tree.size());
+
  }
  }

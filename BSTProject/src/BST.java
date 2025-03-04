@@ -12,27 +12,27 @@ public class BST implements BSTInterface
   }
   public int size()
   {
-    int treeSize;
+    int dog = 0;
     if(root != null)
     {
-      return findSize(root.getLeft());
-      return findSize(root.getRight());
+      findSize(root.getLeft(), dog);
+      findSize(root.getRight(), dog);
     } // End of root != null
 
-    return treeSize;
+    return dog;
   } // End of int size
 
-  public int findSize()
+  private int findSize(TreeNode subroot,int dog)
   {
-    if(root != null)
+    if(subroot != null)
     {
-      return findSize(root.getLeft());
-      return findSize(root.getRight());
+      findSize(subroot.getLeft(),dog);
+      dog += 1;
+      findSize(subroot.getRight(),dog);
+      return dog;
     } // End of root != null
-    else
-    {
-      return 0;
-    }
+    return dog;
+    
   }
   public boolean isEmpty()
   {
@@ -55,11 +55,11 @@ public class BST implements BSTInterface
       }
      else if(toFind.compareTo(root.getValue()) < 0) // Checks if toFind less than root
     {
-      findHelper(root.getLeft(),toFind);
+      return findHelper(root.getLeft(),toFind);
     }
      else
      {  
-      findHelper(root.getRight(),toFind);
+      return findHelper(root.getRight(),toFind);
      }
     } // End of root != null
     else
@@ -129,7 +129,7 @@ public class BST implements BSTInterface
                 temp = temp.getRight();
               }
               temp.setRight(root.getRight());
-              root = temp;
+              root = root.getLeft();
               return true;
             }  
           }
@@ -199,22 +199,30 @@ private boolean deleteHelper(Comparable old, TreeNode parent, TreeNode child)
             }
           else // two kids
             {
-              TreeNode temp= child.getLeft(); // pput the right child on the bottom of the left child
+              TreeNode temp = child.getLeft(); // put the right child on the bottom of the left child
               while(temp.getRight() != null)
               {
                 temp = temp.getRight();
               }
               temp.setRight(child.getRight());
-              child = temp;
-              return true;
+              if (parent.getLeft() == child)
+              {
+                parent.setLeft(child.getLeft());
+                return true;
+              }
+              else
+              {
+                parent.setRight(child.getLeft());
+                return true;
+              }
             }
           }
         }
         else if (old.compareTo(child.getValue()) < 0){
-          return deleteHelper(old, parent, child.getLeft());
+          return deleteHelper(old, child, child.getLeft());
         }//          (value, parent, child)
         else{
-          return deleteHelper(old, parent, child.getRight());
+          return deleteHelper(old, child, child.getRight());
         } // end else
       }
       else
