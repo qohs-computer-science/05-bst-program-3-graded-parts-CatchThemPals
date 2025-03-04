@@ -28,34 +28,47 @@ public class BST implements BSTInterface
   public boolean find(Comparable toFind)
   {
     if(root != null)
-    { if(toFind.compareTo(root.getValue()) == 0)
+    { 
+      if(toFind.compareTo(root.getValue()) == 0) // Checks if toFind equal root
       {
         return true;
       }
-      findHelper(root.getLeft());
-      findHelper(root.getRight());
-      
+     else if(toFind.compareTo(root.getValue()) < 0) // Checks if toFind less than root
+    {
+      findHelper(root.getLeft(),toFind);
     }
+     else
+     {  
+      findHelper(root.getRight(),toFind);
+     }
+    } // End of root != null
     else
     {
       return false;
     }
-  }
+  } // End of find
   private boolean findHelper(TreeNode subroot,Comparable toFind)
   {
     if(subroot != null)
-    { if(subroot == )
+    { 
+      if(toFind.compareTo(subroot.getValue()) == 0)
       {
-
+        return true;
       }
-      findHelper(subroot.getLeft());
-      findHelper(subroot.getRight());
-    }
+      else if(toFind.compareTo(subroot.getValue()) < 0)
+      {
+      return findHelper(subroot.getLeft(), toFind);
+      }
+      else
+      {
+      return findHelper(subroot.getRight(), toFind);
+      }
+    } // End of subroot != null
     else
     {
       return false;
     }
-  }
+  } // End of findHelper
   public boolean replace(Comparable old, Comparable toAdd)
   {
     return false;
