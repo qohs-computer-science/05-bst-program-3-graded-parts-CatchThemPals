@@ -12,10 +12,9 @@ public class BST implements BSTInterface
   }
   public int size()
   {
-    int dog = 0;
     if(root != null)
     {
-      return 1 + findSize(root.getLeft() + findSize(root.getRight());
+      return 1 + findSize(root.getLeft()) + findSize(root.getRight());
     } // End of root != null
 
     return 0;
@@ -25,7 +24,7 @@ public class BST implements BSTInterface
   {
     if(subroot != null)
     {
-    return findSize(subroot.getLeft()) + findSize(subroot.getRight());
+    return 1 + findSize(subroot.getLeft()) + findSize(subroot.getRight());
     } // End of root != null
     return 0;
   }
