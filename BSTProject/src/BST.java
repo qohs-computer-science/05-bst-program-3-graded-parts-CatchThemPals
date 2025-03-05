@@ -86,25 +86,18 @@ public class BST implements BSTInterface
   } // End of findHelper
   public boolean replace(Comparable old, Comparable toAdd)
   {
-    if(root != null)
+    if(find(old))
     {
-      if(old.compareTo(root.getValue()) == 0)
-      {
-        
-      }
+      delete(old);
+      add(toAdd);
+      return true;
     }
     else
     {
-      BST replace = new BST();
-      replace.add(toAdd);
+      add(toAdd);
       return false;
     }
   } // End of replace
-  private boolean replaceHelper(Comparable old, Comparable toAdd)
-  {
-    return false;
-  }
-
 
   
   public boolean delete(Comparable old)

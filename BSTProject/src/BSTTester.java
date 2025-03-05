@@ -29,9 +29,11 @@
     Tree.printInOrder();
     System.out.println("Inorder after deleting D");
     Tree.delete("D");
-    Tree.printInOrder();
+    Tree.printPreOrder();
     System.out.println(Tree.find("Q"));
     System.out.println(Tree.size());
+    System.out.println(Tree.replace("E","N"));
+    Tree.printPostOrder();
 
  }
  }
