@@ -66,7 +66,7 @@ public class BST implements BSTInterface
   {
     if(subroot != null)
     { 
-      if(toFind.compareTo(subroot.getValue()) == 0)
+      if(toFind.compareTo(subroot.getValue()) == 0) 
       {
         return true;
       }
@@ -86,13 +86,13 @@ public class BST implements BSTInterface
   } // End of findHelper
   public boolean replace(Comparable old, Comparable toAdd)
   {
-    if(find(old))
+    if(find(old)) // remove old and add toadd
     {
       delete(old);
       add(toAdd);
       return true;
     }
-    else
+    else // Add toadd and return false
     {
       add(toAdd);
       return false;
