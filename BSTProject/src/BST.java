@@ -6,6 +6,7 @@ public class BST implements BSTInterface
 
 
   private TreeNode root;
+  
   public BST()
   {
     root = null;
@@ -87,9 +88,9 @@ public class BST implements BSTInterface
   {
     if(root != null)
     {
-      if(old.compareTo(root.getValue()))
+      if(old.compareTo(root.getValue()) == 0)
       {
-
+        
       }
     }
     else
@@ -101,7 +102,7 @@ public class BST implements BSTInterface
   } // End of replace
   private boolean replaceHelper(Comparable old, Comparable toAdd)
   {
-    
+    return false;
   }
 
 
